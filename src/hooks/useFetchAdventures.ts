@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { AdventureData, fetchAdventureData } from "../utils/fetchData";
 

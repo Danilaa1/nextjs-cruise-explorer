@@ -29,8 +29,19 @@ export const fetchCruiseData = async (): Promise<CruiseData[]> => {
 
 export const fetchAdventureData = async (): Promise<AdventureData[]> => {
   const response = await fetch("https://jjzl6.wiremockapi.cloud/adventures");
+
   if (!response.ok) {
     throw new Error("Failed to fetch adventure data");
   }
-  return await response.json();
+
+  const data = await response.json();
+
+  const urlRegex = /^(https?:\/\/)[^\s/$.?#].[^\s]*$/i;
+
+  const filteredData = data.filter(
+    (item: AdventureData) =>
+      item.image !== undefined && urlRegex.test(item.image)
+  );
+
+  return filteredData;
 };

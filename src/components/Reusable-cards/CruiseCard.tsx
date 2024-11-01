@@ -7,7 +7,7 @@ interface CruiseCardProps {
   portNames: string[];
   startPort: string;
   endPort: string;
-  price: number; // in cents
+  price: number;
   shipImage: string;
   shipName: string;
   cruiseLineName: string;

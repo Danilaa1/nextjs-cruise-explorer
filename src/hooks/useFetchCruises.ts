@@ -1,6 +1,4 @@
-{
-  /* This custom hook will manage the loading, error, and data states for eacg type of data */
-}
+"use client";
 
 import { useEffect, useState } from "react";
 import { CruiseData, fetchCruiseData } from "../utils/fetchData";
