@@ -7,18 +7,17 @@ interface AdventureCardProps {
 
 const AdventureCard: React.FC<AdventureCardProps> = ({ name, image }) => {
   return (
-    <div className="border rounded-lg shadow-md pt-4 bg-blue-50 w-64">
-      <div>
+    <div className="border rounded-xl shadow-md p-3 bg-blue-50 w-52 flex flex-col justify-between items-center">
+      <div className="relative w-32 h-32 mb-2 overflow-hidden rounded-lg">
         <Image
           src={image}
           alt={name}
-          width={100}
-          height={100}
+          layout="fill"
           style={{ objectFit: "cover" }}
-          className="rounded-lg"
+          className="rounded-lg, w-64 mb-2"
         />
       </div>
-      <h2 className="text-lg font-bold">{name}</h2>
+      <h2 className="text-sm font-medium text-center mb-1">{name}</h2>
     </div>
   );
 };
