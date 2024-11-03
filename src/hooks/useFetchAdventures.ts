@@ -14,7 +14,7 @@ const useFetchAdventures = () => {
         const response = await fetchAdventureData();
         setAdventures(response);
       } catch (err) {
-        setError("Failed to load adventure data");
+        console.error("Error fetching adventures:", err);
       } finally {
         setLoading(false);
       }

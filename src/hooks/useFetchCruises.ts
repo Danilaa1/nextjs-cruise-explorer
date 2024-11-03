@@ -14,7 +14,7 @@ const useFetchCruises = () => {
         const response = await fetchCruiseData();
         setCruises(response);
       } catch (err) {
-        setError("Failed to load cruise data");
+        console.error("Error fetching adventures:", err);
       } finally {
         setLoading(false);
       }
