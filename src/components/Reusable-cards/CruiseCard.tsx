@@ -18,7 +18,7 @@ interface CruiseCardProps {
 const CruiseCard: React.FC<CruiseCardProps> = ({
   name,
   nights,
-  sailDate: _sailDate, //This is not used in the component
+  //sailDate, //This interface is not used in the component
   portNames = [],
   startPort,
   endPort,

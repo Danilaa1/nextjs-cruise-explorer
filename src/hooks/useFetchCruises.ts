@@ -15,6 +15,7 @@ const useFetchCruises = () => {
         setCruises(response);
       } catch (err) {
         console.error("Error fetching adventures:", err);
+        setError("Error fetching adventures");
       } finally {
         setLoading(false);
       }
