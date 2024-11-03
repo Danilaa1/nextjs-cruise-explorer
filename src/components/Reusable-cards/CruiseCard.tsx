@@ -52,7 +52,7 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
       {/* Ship Image */}
       <div className="relative w-full h-48 mb-4">
         <Image
-          src={shipName}
+          src={shipImage}
           alt={name}
           layout="fill"
           objectFit="cover"

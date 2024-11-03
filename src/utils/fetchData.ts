@@ -8,6 +8,7 @@ export interface CruiseData {
   endPort: string;
   priceInCents: number;
   shipImage: string;
+  shipName: string;
   cruiseLineName: string;
   iconOverlay: string;
   iconBackgroundColor: string;

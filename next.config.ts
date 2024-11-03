@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
-    domains: ["images.ctfassets.net"], // Add the domain here
+    domains: ["images.ctfassets.net", "img.cruisecritic.net"],
   },
 };
 
