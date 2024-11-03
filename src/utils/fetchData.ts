@@ -6,7 +6,7 @@ export interface CruiseData {
   portNames: string[];
   startPort: string;
   endPort: string;
-  priceInCents: number;
+  price: number;
   shipImage: string;
   shipName: string;
   cruiseLineName: string;

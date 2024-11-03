@@ -12,9 +12,10 @@ const AdventureCard: React.FC<AdventureCardProps> = ({ name, image }) => {
         <Image
           src={image}
           alt={name}
-          layout="fill"
+          fill
           style={{ objectFit: "cover" }}
           className="rounded-lg, w-64 mb-2"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <h2 className="text-sm font-medium text-center mb-1">{name}</h2>

@@ -44,8 +44,6 @@ export default function Home() {
               key={`${cruise.name}-${index}`}
               name={cruise.name}
               nights={cruise.nights}
-              sailDate={cruise.sailDate}
-              portNames={cruise.portNames}
               startPort={cruise.startPort}
               endPort={cruise.endPort}
               shipImage={cruise.shipImage}
@@ -53,7 +51,7 @@ export default function Home() {
               cruiseLineName={cruise.cruiseLineName}
               iconOverlay={cruise.iconOverlay}
               iconBackgroundColor={cruise.iconBackgroundColor}
-              price={cruise.priceInCents}
+              price={cruise.price}
             />
           ))}
         </div>

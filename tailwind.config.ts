@@ -12,6 +12,16 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        "emphazise-price":
+          "emphasize 0.5s cubic-bezier(0.61, 1, 0.88, 1) forwards",
+      },
+      keyframes: {
+        emphasize: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+        },
+      },
     },
   },
   plugins: [],

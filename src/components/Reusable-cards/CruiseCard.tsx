@@ -3,10 +3,10 @@ import Image from "next/image";
 interface CruiseCardProps {
   name: string;
   nights: number;
-  sailDate: string;
-  portNames: string[];
+  sailDate?: string;
+  portNames?: string[];
   startPort: string;
-  endPort: string;
+  endPort?: string;
   price: number;
   shipImage: string;
   shipName: string;
@@ -19,7 +19,7 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
   name,
   nights,
   sailDate,
-  portNames,
+  portNames = [],
   startPort,
   endPort,
   price,
@@ -30,7 +30,7 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
   iconBackgroundColor,
 }) => {
   return (
-    <div className="border rounded-lg shadow-lg p-6 bg-white">
+    <div className="border rounded-lg shadow-lg p-6 bg-white flex flex-col justify-between h-full">
       {/* Cruise Line and Ship Info */}
       <div className="flex items-start space-x-4 mb-4">
         <div
@@ -50,24 +50,26 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
         </div>
       </div>
       {/* Ship Image */}
-      <div className="relative w-full h-48 mb-4">
+      <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
         <Image
           src={shipImage}
           alt={name}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
+          fill
+          style={{ objectFit: "cover" }}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="rounded-lg transform transition-transform duration-500 hover:scale-105"
+          priority //I ensure to load the image as soon as possible during the page load
         />
       </div>
       {/* Cruise Details */}
       <h2 className="text-2xl font-bold">{name}</h2>
       <p className="text-gray-500">Nights: {nights}</p>
-      <p className="text-gray-500">Sail Date: {sailDate}</p>
+      {/*<p className="text-gray-500">Sail Date: {sailDate}</p> */}
       <p className="text-gray-500">Start Port: {startPort}</p>
       <p className="text-gray-500">End Port: {endPort}</p>
 
       {/* Port Names */}
-      <p className="text-gray-500 mt-2">Ports:</p>
+      {/* <p className="text-gray-500 mt-2">Ports:</p>*/}
       <ul className="list-disc list-inside text-gray-600">
         {portNames.map((port, index) => (
           <li key={index}>{port}</li>
@@ -75,7 +77,9 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
       </ul>
 
       {/* Price */}
-      <p className="text-xl font-semibold text-green-600 mt-4">{price}</p>
+      <p className="text-lg font-semibold text-green-600 mt-4 self-start hover:animate-emphazise-price">
+        £{price}
+      </p>
     </div>
   );
 };
