@@ -15,8 +15,6 @@ The **Next.js Cruise Explorer** is a web application designed to showcase popula
 - **TypeScript**: Ensures type safety and enhances code maintainability.
 - **Tailwind CSS**: Used for fast and efficient styling with utility-first classes.
 - **JavaScript/React**: Core logic and component structure.
-- **HTML/CSS**: Basic structure and styling.
-- **Node.js**: For development environment and running the Next.js application.
 
 ## Installation and Setup
 1. Clone the repository:
