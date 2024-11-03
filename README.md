@@ -35,19 +35,19 @@ The **Next.js Cruise Explorer** is a web application designed to showcase popula
     yarn dev
 5. Open http://localhost:3000 in your browser to view the application.
 
-Project Highlights
-Animations: Hover effects added for price text and image zoom-in to create a sense of depth.
-Image Handling: Resolved issues with image sizes, widths, and heights for consistent display.
-Performance: Enhanced image performance by optimizing LCP images and adding the priority property.
+## Project Highlights
+-**Animations: Hover effects added for price text and image zoom-in to create a sense of depth.
+-**Image Handling: Resolved issues with image sizes, widths, and heights for consistent display.
+-**Performance: Enhanced image performance by optimizing LCP images and adding the priority property.
 
 
-Usage
-Browse available cruises and adventure cards.
-Experience smooth animations and responsive design across devices.
+## Usage
+-**Browse available cruises and adventure cards.
+-**Experience smooth animations and responsive design across devices.
 
-Future Enhancements
-API Integration: Connect with live data sources for real-time updates.
-User Authentication: Add login functionality for personalized user experiences.
-Advanced Filtering: Implement search and filter features for better user navigation.
+## Future Enhancements
+-**API Integration: Connect with live data sources for real-time updates.
+-**User Authentication: Add login functionality for personalized user experiences.
+-**Advanced Filtering: Implement search and filter features for better user navigation.
 
 
