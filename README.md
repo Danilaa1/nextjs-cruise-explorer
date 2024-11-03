@@ -32,7 +32,7 @@ The **Next.js Cruise Explorer** is a web application designed to showcase popula
    ```bash
    npm run dev
        or
-   yarn dev
+    yarn dev
 5. Open http://localhost:3000 in your browser to view the application.
 
 Project Highlights
