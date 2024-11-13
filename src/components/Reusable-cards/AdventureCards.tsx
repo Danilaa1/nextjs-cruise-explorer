@@ -7,7 +7,7 @@ interface AdventureCardProps {
 
 const AdventureCard: React.FC<AdventureCardProps> = ({ name, image }) => {
   return (
-    <div className="border rounded-xl cursor-pointer bg-blue-50 w-full sm:w-48 h-36 sm:h-40 flex flex-col items-center">
+    <div className="border rounded-xl cursor-pointer bg-white w-full sm:w-48 h-36 sm:h-40 flex flex-col items-center">
       <div className="relative h-40 w-40 sm:w-full overflow-hidden rounded-t-lg">
         <Image
           src={image}
@@ -18,7 +18,7 @@ const AdventureCard: React.FC<AdventureCardProps> = ({ name, image }) => {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
-      <h2 className="text-sm sm:text-md font-normal text-center mt-2 mb-2 select-none px-1">
+      <h2 className="text-sm sm:text-md font-semibold text-center mt-2 mb-2 select-none px-1">
         {name}
       </h2>
     </div>
