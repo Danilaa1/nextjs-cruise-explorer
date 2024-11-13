@@ -26,7 +26,7 @@ export default function Home() {
       <Header />
       <div className="p-6 space-y-8">
         <section>
-          <h2 className="text-2xl font-bold mb-4">My Adventures</h2>
+          <h2 className="text-2xl font-normal mb-4">My Adventures</h2>
           <div className="flex overflow-x-auto space-x-4">
             {adventures.map((adventure, index) => (
               <AdventureCard
