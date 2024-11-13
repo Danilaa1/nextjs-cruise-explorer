@@ -30,9 +30,9 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
   iconBackgroundColor,
 }) => {
   return (
-    <div className="text-xs border rounded-lg cursor-pointer bg-white flex flex-col justify-center w-64 max-w-xs sm:w-48 h-auto sm:h-52 relative">
+    <div className="text-xs border rounded-lg cursor-pointer bg-white flex flex-col justify-center w-64 sm:w-48 h-60 sm:h-56 relative">
       {/* Ship Image */}
-      <div className="relative w-full h-40 sm:h-32 mb-2 overflow-hidden rounded-t-lg">
+      <div className="relative w-52 h-40 sm:w-full sm:h-32 mb-2 overflow-hidden rounded-t-lg">
         <Image
           src={shipImage}
           alt={name}
@@ -52,14 +52,20 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
       </div>
 
       {/* Cruise Details */}
-      <div className="px-2">
-        <h2 className="text-xs font-semibold select-none">{name}</h2>
+      <div className="px-1.5">
+        <h2
+          className="font-semibold sm:font-semibold select-none sm:w-56 tracking-tight"
+          style={{
+            fontSize: "clamp(0.55rem, 3vw + 0.7rem, 0.67rem)",
+          }}
+        >
+          {name}
+        </h2>
         <p className="text-gray-500">Nights: {nights}</p>
         <p className="text-gray-500">End Port: {endPort}</p>
 
         {/*<p className="text-gray-500">Sail Date: {sailDate}</p> */}
-        {/*<p className="text-gray-500">Start Port: {startPort}</p>
-         */}
+        {/*<p className="text-gray-500">Start Port: {startPort}</p>*/}
 
         {/* Port Names */}
         {/* <p className="text-gray-500 mt-2">Ports:</p>*/}
@@ -69,7 +75,7 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
           ))}
         </ul>
         {/* Price */}
-        <p className="text-sm font-normal text-green-600 mt-2 mb-2 self-start hover:animate-emphazise-price">
+        <p className="text-sm font-normal text-black mt-2 mb-2 self-start hover:animate-emphazise-price">
           £{price}
         </p>
       </div>
