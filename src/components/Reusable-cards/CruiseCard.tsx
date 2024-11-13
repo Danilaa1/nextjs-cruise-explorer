@@ -21,16 +21,16 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
   //sailDate, //This interface is not used in the component
   portNames = [],
   //startPort,
-  //endPort,
+  endPort,
   price,
   shipImage,
   //shipName,
   //cruiseLineName,
-  //iconOverlay,
-  //iconBackgroundColor,
+  iconOverlay,
+  iconBackgroundColor,
 }) => {
   return (
-    <div className="text-sm border rounded-lg cursor-pointer bg-white flex flex-col justify-center w-64 max-w-xs sm:w-48 h-auto sm:h-52 relative">
+    <div className="text-xs border rounded-lg cursor-pointer bg-white flex flex-col justify-center w-64 max-w-xs sm:w-48 h-auto sm:h-52 relative">
       {/* Ship Image */}
       <div className="relative w-full h-40 sm:h-32 mb-2 overflow-hidden rounded-t-lg">
         <Image
@@ -43,15 +43,23 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
           priority //I ensure to load the image as soon as possible during the page load
         />
       </div>
+
+      <div
+        className="absolute bottom-2 right-2 w-7 h-7 rounded-md flex items-center justify-center"
+        style={{ backgroundColor: iconBackgroundColor }}
+      >
+        <Image src={iconOverlay} alt={""} height={20} width={20} />
+      </div>
+
       {/* Cruise Details */}
       <div className="px-2">
-        <h2 className="text-sm font-semibold select-none">{name}</h2>
+        <h2 className="text-xs font-semibold select-none">{name}</h2>
         <p className="text-gray-500">Nights: {nights}</p>
+        <p className="text-gray-500">End Port: {endPort}</p>
 
         {/*<p className="text-gray-500">Sail Date: {sailDate}</p> */}
         {/*<p className="text-gray-500">Start Port: {startPort}</p>
          */}
-        {/*<p className="text-gray-500">End Port: {endPort}</p> */}
 
         {/* Port Names */}
         {/* <p className="text-gray-500 mt-2">Ports:</p>*/}
