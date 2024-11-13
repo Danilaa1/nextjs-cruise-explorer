@@ -37,8 +37,8 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <h2 className="text-2xl font-medium mb-4">Popular Cruises</h2>
-        <div className="grid grid-cols-1 sd:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <h2 className="text-2xl font-normal mb-4">Popular Cruises</h2>
+        <div className="grid grid-cols-1 sd:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {cruises.map((cruise, index) => (
             <CruiseCard
               key={`${cruise.name}-${index}`}
