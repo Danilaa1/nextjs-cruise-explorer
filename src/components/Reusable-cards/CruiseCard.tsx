@@ -18,19 +18,26 @@ interface CruiseCardProps {
 const CruiseCard: React.FC<CruiseCardProps> = ({
   name,
   nights,
-  //sailDate, //This interface is not used in the component
-  portNames = [],
-  //startPort,
-  endPort,
+  sailDate,
+  startPort,
+  //endPort,
   price,
   shipImage,
-  //shipName,
+  shipName,
   //cruiseLineName,
   iconOverlay,
   iconBackgroundColor,
 }) => {
+  const formattedSailDate = sailDate
+    ? new Date(sailDate).toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      })
+    : "N/A";
+
   return (
-    <div className="text-xs border rounded-lg cursor-pointer bg-white flex flex-col justify-center w-64 sm:w-48 h-60 sm:h-56 relative">
+    <div className="text-xs border rounded-lg cursor-pointer bg-white flex flex-col justify-center w-64 sm:w-48 h-60 sm:h-60 relative">
       {/* Ship Image */}
       <div className="relative w-52 h-40 sm:w-full sm:h-32 mb-2 overflow-hidden rounded-t-lg">
         <Image
@@ -44,13 +51,6 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
         />
       </div>
 
-      <div
-        className="absolute bottom-2 right-2 w-7 h-7 rounded-md flex items-center justify-center"
-        style={{ backgroundColor: iconBackgroundColor }}
-      >
-        <Image src={iconOverlay} alt={""} height={20} width={20} />
-      </div>
-
       {/* Cruise Details */}
       <div className="px-1.5">
         <h2
@@ -61,24 +61,26 @@ const CruiseCard: React.FC<CruiseCardProps> = ({
         >
           {name}
         </h2>
-        <p className="text-gray-500">Nights: {nights}</p>
-        <p className="text-gray-500">End Port: {endPort}</p>
+        <p className="pb-1">{shipName}</p>
 
-        {/*<p className="text-gray-500">Sail Date: {sailDate}</p> */}
-        {/*<p className="text-gray-500">Start Port: {startPort}</p>*/}
-
-        {/* Port Names */}
-        {/* <p className="text-gray-500 mt-2">Ports:</p>*/}
-        <ul className="list-disc list-inside text-gray-600">
-          {portNames.map((port, index) => (
-            <li key={index}>{port}</li>
-          ))}
-        </ul>
-        {/* Price */}
-        <p className="text-sm font-normal text-black mt-2 mb-2 self-start hover:animate-emphazise-price">
-          £{price}
-        </p>
+        <p>Nights: {nights}</p>
+        <div className="w-full max-w-xs break-words pb-1">
+          <p>{formattedSailDate} from</p>
+          <p className="font-bold">{startPort}</p>
+        </div>
       </div>
+
+      <div
+        className="absolute bottom-2 right-2 w-7 h-7 rounded-md flex items-center justify-center"
+        style={{ backgroundColor: iconBackgroundColor }}
+      >
+        <Image src={iconOverlay} alt={"iconOverlay"} height={20} width={20} />
+      </div>
+
+      {/* Price */}
+      <p className="text-sm font-normal text-black ml-1.5 mt-1 mb-2 self-start hover:animate-emphazise-price">
+        £{price}
+      </p>
     </div>
   );
 };
