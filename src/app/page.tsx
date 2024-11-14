@@ -43,6 +43,7 @@ export default function Home() {
             <CruiseCard
               key={`${cruise.name}-${index}`}
               name={cruise.name}
+              sailDate={cruise.sailDate}
               nights={cruise.nights}
               startPort={cruise.startPort}
               endPort={cruise.endPort}
